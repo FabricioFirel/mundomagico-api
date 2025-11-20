@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "solicitacoes_orcamento")
+@Table(name = "\"solicitacoes_orcamento\"")
 @Getter 
 @Setter 
 @NoArgsConstructor 
