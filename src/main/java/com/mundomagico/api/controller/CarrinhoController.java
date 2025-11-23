@@ -1,12 +1,19 @@
 package com.mundomagico.api.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.mundomagico.api.model.Carrinho;
 import com.mundomagico.api.service.CarrinhoService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/carrinho")
+@RequestMapping("/api/carrinho")
 @CrossOrigin("*")
 public class CarrinhoController {
 
@@ -20,6 +27,6 @@ public class CarrinhoController {
 
     @GetMapping("/{id}")
     public Carrinho buscarCarrinho(@PathVariable Long id) {
-        return carrinhoService.salvar(carrinhoService.buscar(id));
+        return carrinhoService.buscar(id);
     }
 }

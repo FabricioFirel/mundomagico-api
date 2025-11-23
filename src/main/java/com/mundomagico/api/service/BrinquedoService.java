@@ -1,37 +1,36 @@
-
 package com.mundomagico.api.service;
 
-import org.springframework.lang.NonNull;
-import com.mundomagico.api.model.Brinquedo;
-import com.mundomagico.api.repository.BrinquedoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;                  // modelo
+
+import org.springframework.beans.factory.annotation.Autowired;  // repositório
 import org.springframework.stereotype.Service;
-import java.util.List;
+
+import com.mundomagico.api.model.Brinquedo;
+import com.mundomagico.api.repository.BrinquedoRepository;                                       // NonNull correto (Lombok)
+
+import lombok.NonNull;
 
 @Service
 public class BrinquedoService {
 
-    private final BrinquedoRepository brinquedoRepository;
+    private final BrinquedoRepository brinquedoRepository;   // repositório
 
     @Autowired
     public BrinquedoService(BrinquedoRepository brinquedoRepository) {
-        this.brinquedoRepository = brinquedoRepository;
+        this.brinquedoRepository = brinquedoRepository;      // injeta dependência
     }
 
-
-    @NonNull 
-    public Brinquedo salvarBrinquedo(Brinquedo   brinquedo) {
-        return brinquedoRepository.save(brinquedo);
+    public Brinquedo salvarBrinquedo(@NonNull Brinquedo brinquedo) { 
+        // @NonNull → garante que o brinquedo não seja nulo
+        return brinquedoRepository.save(brinquedo);          // salva no banco
     }
-    
-
 
     public List<Brinquedo> listarTodosBrinquedos() {
-        return brinquedoRepository.findAll();
+        return brinquedoRepository.findAll();                // retorna todos
     }
 
-    public void excluirBrinquedo(@NonNull Long id) {
-    brinquedoRepository.deleteById(id);
-}
-
+    public void excluirBrinquedo(@NonNull Long id) { 
+        // @NonNull → id obrigatório
+        brinquedoRepository.deleteById(id);                  // deleta do banco
+    }
 }

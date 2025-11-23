@@ -16,8 +16,13 @@ public class ItemCarrinho {
     private Long id;
 
     @ManyToOne
-    private Brinquedo brinquedo; // brinquedo escolhido
+    @JoinColumn(name = "brinquedo_id")
+    private Brinquedo brinquedo;
 
-    private Integer quantidade;  // quantos iguais
-    private Integer horas;       // por quantas horas será alugado
+    private Integer quantidade;
+    private Integer horas;
+
+    @ManyToOne
+    @JoinColumn(name = "carrinho_id")
+    private Carrinho carrinho;
 }

@@ -15,13 +15,13 @@ public class ReservaItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer quantidade;
+    @ManyToOne
+    @JoinColumn(name = "reserva_id")
+    private Reserva reserva;
 
     @ManyToOne
     @JoinColumn(name = "brinquedo_id")
     private Brinquedo brinquedo;
 
-    @ManyToOne
-    @JoinColumn(name = "reserva_id")
-    private Reserva reserva;
+    private Integer quantidade;
 }
