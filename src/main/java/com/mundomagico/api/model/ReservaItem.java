@@ -24,4 +24,5 @@ public class ReservaItem {
     private Brinquedo brinquedo;
 
     private Integer quantidade;
+    private Integer horas;
 }
