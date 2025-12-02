@@ -1,0 +1,46 @@
+
+
+-- Tabela USUARIO
+-- CREATE TABLE usuario (
+--     id_usuario SERIAL PRIMARY KEY,
+--     nome VARCHAR(100) NOT NULL,
+--     email VARCHAR(100) UNIQUE NOT NULL,
+--     senha VARCHAR(100) NOT NULL,
+--     role VARCHAR(20) NOT NULL
+-- );
+
+-- Tabela BRINQUEDO
+-- CREATE TABLE brinquedo (
+--     id_brinquedo SERIAL PRIMARY KEY,
+--     nome VARCHAR(100) NOT NULL,
+--     descricao TEXT,
+--     categoria VARCHAR(50),
+--     preco_por_hora DECIMAL(10,2) NOT NULL
+-- );
+
+-- Tipo ENUM para status da reserva
+-- CREATE TYPE status_reserva AS ENUM ('pendente', 'pago', 'cancelado');
+
+-- Tabela RESERVA
+-- CREATE TABLE reserva (
+--     id_reserva SERIAL PRIMARY KEY,
+--     nome_cliente VARCHAR(100) NOT NULL,
+--     email_cliente VARCHAR(100),
+--     telefone_cliente VARCHAR(20),
+--     data_festa DATE NOT NULL,
+--     valor_total DECIMAL(10,2),
+--     status status_reserva DEFAULT 'pendente'
+-- );
+
+-- Tabela CARRINHO (Usuário cria carrinho)
+-- CREATE TABLE carrinho (
+--     id_carrinho SERIAL PRIMARY KEY,
+--     id_usuario INT NOT NULL,
+--     total DECIMAL(10,2),
+--
+--     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+--         ON DELETE CASCADE
+-- );
+
+-- Tabela ITENS_CARRINHO (Carrinho contém brinquedos)
+-- CREA
